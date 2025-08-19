@@ -4,7 +4,7 @@ import { useMemo } from "react"
 
 export const useCart = () => {
 
-    //! ====MAIN COMPONENT "APP.JSX"====
+    //! ====MAIN COMPONENT: "APP.JSX"====
     const initialCart = () => {
         const localStorageCart = localStorage.getItem('cart')
         return localStorageCart ? JSON.parse(localStorageCart) : []
@@ -68,7 +68,7 @@ export const useCart = () => {
     }
 
 
-    //! ====COMPONENT "HEADER"====
+    //! ====COMPONENT: "HEADER"====
     const isEmpty = useMemo( () => cart.length === 0, [cart])
     const cartTotal = useMemo( () => cart.reduce( (total, item ) => total + (item.quantity * item.price), 0), [cart] )
 
